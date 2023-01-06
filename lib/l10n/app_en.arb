@@ -1,0 +1,6 @@
+{
+    "appName": "Spotify",
+    "featuredPlaylistsTitle": "Editor's picks",
+    "serverError": "Unfortunately, a server error prevented us from completing your request. Please try again.",
+    "refreshButton": "Refresh"
+}
