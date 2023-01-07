@@ -13,6 +13,7 @@ import 'package:spotify/locator.dart';
 import 'widgets/error_playlist.dart';
 import 'widgets/loaded_playlist.dart';
 import 'widgets/loading_playlist.dart';
+import 'widgets/playing_track.dart';
 
 class PlaylistScreen extends StatefulWidget {
   const PlaylistScreen(this.playlist, {Key? key}) : super(key: key);
@@ -152,6 +153,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> with AutomaticKeepAlive
             ),
           ],
         ),
+        bottomSheet: const PlayingTrack(),
       ),
     );
   }
