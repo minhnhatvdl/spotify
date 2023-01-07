@@ -6,6 +6,7 @@ part 'track_state.freezed.dart';
 class TrackState {
   const factory TrackState.init() = InitTrackState;
   const factory TrackState.error() = ErrorTrackState;
+  const factory TrackState.start(TrackModel track) = StartTrackState;
   const factory TrackState.resume(TrackModel track) = ResumeTrackState;
   const factory TrackState.pause(TrackModel track) = PauseTrackState;
 }

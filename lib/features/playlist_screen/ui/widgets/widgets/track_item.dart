@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:provider/provider.dart';
 import 'package:spotify/common/models/track_model/track_model.dart';
 import 'package:spotify/common/services/track_service/track_service.dart';
@@ -19,8 +18,7 @@ class TrackItem extends StatelessWidget {
       onTap: hasPreviewUrl ? () => trackService.playTrack(track) : null,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-        child: StateNotifierBuilder<TrackState>(
-          stateNotifier: context.read<TrackService>(),
+        child: Consumer<TrackState>(
           builder: (_, TrackState state, __) {
             bool isPlaying = false;
             if (state is ResumeTrackState) {

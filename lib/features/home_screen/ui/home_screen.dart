@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
+import 'package:provider/provider.dart';
 import 'package:spotify/common/models/playlist_model/playlist_model.dart';
 import 'package:spotify/common/ui/app_loading.dart';
+import 'package:spotify/common/ui/player_track/player_track.dart';
 import 'package:spotify/features/home_screen/repositories/playlists_repository.dart';
 import 'package:spotify/features/home_screen/services/playlists_service/playlists_service.dart';
 import 'package:spotify/features/home_screen/services/playlists_service/playlists_state/playlists_state.dart';
 import 'package:spotify/features/home_screen/ui/widgets/error_list_playlists.dart';
 import 'package:spotify/features/home_screen/ui/widgets/loaded_list_playlists.dart';
-import 'package:spotify/common/ui/playing_track.dart';
 import 'package:spotify/locator.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -37,8 +38,7 @@ class _HomeScreenState extends State<HomeScreen> with AutomaticKeepAliveClientMi
     return StateNotifierProvider<PlaylistsService, PlaylistsState>.value(
       value: _playlistsService,
       child: Scaffold(
-        body: StateNotifierBuilder<PlaylistsState>(
-          stateNotifier: _playlistsService,
+        body: Consumer<PlaylistsState>(
           builder: (_, PlaylistsState state, __) {
             if (state is LoadingPlaylistsState) {
               return const AppLoading();
@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> with AutomaticKeepAliveClientMi
             return const ErrorListPlaylists();
           },
         ),
-        bottomSheet: const PlayingTrack(),
+        bottomSheet: const PlayerTrack(),
       ),
     );
   }

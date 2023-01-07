@@ -6,12 +6,14 @@ import 'track_state/track_state.dart';
 class TrackService extends StateNotifier<TrackState> {
   TrackService() : super(const InitTrackState());
   final _player = AudioPlayer();
+  Duration? duration;
 
-  void playTrack(TrackModel track) {
+  void playTrack(TrackModel track) async {
     if (track.previewUrl != null) {
+      state = StartTrackState(track);
+      duration = await _player.setUrl(track.previewUrl!);
       state = ResumeTrackState(track);
       _player
-        ..setUrl(track.previewUrl!)
         ..play()
         ..setLoopMode(LoopMode.one);
     }

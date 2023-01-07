@@ -26,6 +26,12 @@ class _$TrackStateTearOff {
     return const ErrorTrackState();
   }
 
+  StartTrackState start(TrackModel track) {
+    return StartTrackState(
+      track,
+    );
+  }
+
   ResumeTrackState resume(TrackModel track) {
     return ResumeTrackState(
       track,
@@ -48,6 +54,7 @@ mixin _$TrackState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() error,
+    required TResult Function(TrackModel track) start,
     required TResult Function(TrackModel track) resume,
     required TResult Function(TrackModel track) pause,
   }) =>
@@ -56,6 +63,7 @@ mixin _$TrackState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? error,
+    TResult Function(TrackModel track)? start,
     TResult Function(TrackModel track)? resume,
     TResult Function(TrackModel track)? pause,
   }) =>
@@ -64,6 +72,7 @@ mixin _$TrackState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? error,
+    TResult Function(TrackModel track)? start,
     TResult Function(TrackModel track)? resume,
     TResult Function(TrackModel track)? pause,
     required TResult orElse(),
@@ -73,6 +82,7 @@ mixin _$TrackState {
   TResult map<TResult extends Object?>({
     required TResult Function(InitTrackState value) init,
     required TResult Function(ErrorTrackState value) error,
+    required TResult Function(StartTrackState value) start,
     required TResult Function(ResumeTrackState value) resume,
     required TResult Function(PauseTrackState value) pause,
   }) =>
@@ -81,6 +91,7 @@ mixin _$TrackState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(InitTrackState value)? init,
     TResult Function(ErrorTrackState value)? error,
+    TResult Function(StartTrackState value)? start,
     TResult Function(ResumeTrackState value)? resume,
     TResult Function(PauseTrackState value)? pause,
   }) =>
@@ -89,6 +100,7 @@ mixin _$TrackState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitTrackState value)? init,
     TResult Function(ErrorTrackState value)? error,
+    TResult Function(StartTrackState value)? start,
     TResult Function(ResumeTrackState value)? resume,
     TResult Function(PauseTrackState value)? pause,
     required TResult orElse(),
@@ -154,6 +166,7 @@ class _$InitTrackState implements InitTrackState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() error,
+    required TResult Function(TrackModel track) start,
     required TResult Function(TrackModel track) resume,
     required TResult Function(TrackModel track) pause,
   }) {
@@ -165,6 +178,7 @@ class _$InitTrackState implements InitTrackState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? error,
+    TResult Function(TrackModel track)? start,
     TResult Function(TrackModel track)? resume,
     TResult Function(TrackModel track)? pause,
   }) {
@@ -176,6 +190,7 @@ class _$InitTrackState implements InitTrackState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? error,
+    TResult Function(TrackModel track)? start,
     TResult Function(TrackModel track)? resume,
     TResult Function(TrackModel track)? pause,
     required TResult orElse(),
@@ -191,6 +206,7 @@ class _$InitTrackState implements InitTrackState {
   TResult map<TResult extends Object?>({
     required TResult Function(InitTrackState value) init,
     required TResult Function(ErrorTrackState value) error,
+    required TResult Function(StartTrackState value) start,
     required TResult Function(ResumeTrackState value) resume,
     required TResult Function(PauseTrackState value) pause,
   }) {
@@ -202,6 +218,7 @@ class _$InitTrackState implements InitTrackState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(InitTrackState value)? init,
     TResult Function(ErrorTrackState value)? error,
+    TResult Function(StartTrackState value)? start,
     TResult Function(ResumeTrackState value)? resume,
     TResult Function(PauseTrackState value)? pause,
   }) {
@@ -213,6 +230,7 @@ class _$InitTrackState implements InitTrackState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitTrackState value)? init,
     TResult Function(ErrorTrackState value)? error,
+    TResult Function(StartTrackState value)? start,
     TResult Function(ResumeTrackState value)? resume,
     TResult Function(PauseTrackState value)? pause,
     required TResult orElse(),
@@ -270,6 +288,7 @@ class _$ErrorTrackState implements ErrorTrackState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() error,
+    required TResult Function(TrackModel track) start,
     required TResult Function(TrackModel track) resume,
     required TResult Function(TrackModel track) pause,
   }) {
@@ -281,6 +300,7 @@ class _$ErrorTrackState implements ErrorTrackState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? error,
+    TResult Function(TrackModel track)? start,
     TResult Function(TrackModel track)? resume,
     TResult Function(TrackModel track)? pause,
   }) {
@@ -292,6 +312,7 @@ class _$ErrorTrackState implements ErrorTrackState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? error,
+    TResult Function(TrackModel track)? start,
     TResult Function(TrackModel track)? resume,
     TResult Function(TrackModel track)? pause,
     required TResult orElse(),
@@ -307,6 +328,7 @@ class _$ErrorTrackState implements ErrorTrackState {
   TResult map<TResult extends Object?>({
     required TResult Function(InitTrackState value) init,
     required TResult Function(ErrorTrackState value) error,
+    required TResult Function(StartTrackState value) start,
     required TResult Function(ResumeTrackState value) resume,
     required TResult Function(PauseTrackState value) pause,
   }) {
@@ -318,6 +340,7 @@ class _$ErrorTrackState implements ErrorTrackState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(InitTrackState value)? init,
     TResult Function(ErrorTrackState value)? error,
+    TResult Function(StartTrackState value)? start,
     TResult Function(ResumeTrackState value)? resume,
     TResult Function(PauseTrackState value)? pause,
   }) {
@@ -329,6 +352,7 @@ class _$ErrorTrackState implements ErrorTrackState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitTrackState value)? init,
     TResult Function(ErrorTrackState value)? error,
+    TResult Function(StartTrackState value)? start,
     TResult Function(ResumeTrackState value)? resume,
     TResult Function(PauseTrackState value)? pause,
     required TResult orElse(),
@@ -342,6 +366,166 @@ class _$ErrorTrackState implements ErrorTrackState {
 
 abstract class ErrorTrackState implements TrackState {
   const factory ErrorTrackState() = _$ErrorTrackState;
+}
+
+/// @nodoc
+abstract class $StartTrackStateCopyWith<$Res> {
+  factory $StartTrackStateCopyWith(
+          StartTrackState value, $Res Function(StartTrackState) then) =
+      _$StartTrackStateCopyWithImpl<$Res>;
+  $Res call({TrackModel track});
+
+  $TrackModelCopyWith<$Res> get track;
+}
+
+/// @nodoc
+class _$StartTrackStateCopyWithImpl<$Res> extends _$TrackStateCopyWithImpl<$Res>
+    implements $StartTrackStateCopyWith<$Res> {
+  _$StartTrackStateCopyWithImpl(
+      StartTrackState _value, $Res Function(StartTrackState) _then)
+      : super(_value, (v) => _then(v as StartTrackState));
+
+  @override
+  StartTrackState get _value => super._value as StartTrackState;
+
+  @override
+  $Res call({
+    Object? track = freezed,
+  }) {
+    return _then(StartTrackState(
+      track == freezed
+          ? _value.track
+          : track // ignore: cast_nullable_to_non_nullable
+              as TrackModel,
+    ));
+  }
+
+  @override
+  $TrackModelCopyWith<$Res> get track {
+    return $TrackModelCopyWith<$Res>(_value.track, (value) {
+      return _then(_value.copyWith(track: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$StartTrackState implements StartTrackState {
+  const _$StartTrackState(this.track);
+
+  @override
+  final TrackModel track;
+
+  @override
+  String toString() {
+    return 'TrackState.start(track: $track)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is StartTrackState &&
+            const DeepCollectionEquality().equals(other.track, track));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(track));
+
+  @JsonKey(ignore: true)
+  @override
+  $StartTrackStateCopyWith<StartTrackState> get copyWith =>
+      _$StartTrackStateCopyWithImpl<StartTrackState>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() error,
+    required TResult Function(TrackModel track) start,
+    required TResult Function(TrackModel track) resume,
+    required TResult Function(TrackModel track) pause,
+  }) {
+    return start(track);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? error,
+    TResult Function(TrackModel track)? start,
+    TResult Function(TrackModel track)? resume,
+    TResult Function(TrackModel track)? pause,
+  }) {
+    return start?.call(track);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? error,
+    TResult Function(TrackModel track)? start,
+    TResult Function(TrackModel track)? resume,
+    TResult Function(TrackModel track)? pause,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(track);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitTrackState value) init,
+    required TResult Function(ErrorTrackState value) error,
+    required TResult Function(StartTrackState value) start,
+    required TResult Function(ResumeTrackState value) resume,
+    required TResult Function(PauseTrackState value) pause,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitTrackState value)? init,
+    TResult Function(ErrorTrackState value)? error,
+    TResult Function(StartTrackState value)? start,
+    TResult Function(ResumeTrackState value)? resume,
+    TResult Function(PauseTrackState value)? pause,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitTrackState value)? init,
+    TResult Function(ErrorTrackState value)? error,
+    TResult Function(StartTrackState value)? start,
+    TResult Function(ResumeTrackState value)? resume,
+    TResult Function(PauseTrackState value)? pause,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StartTrackState implements TrackState {
+  const factory StartTrackState(TrackModel track) = _$StartTrackState;
+
+  TrackModel get track;
+  @JsonKey(ignore: true)
+  $StartTrackStateCopyWith<StartTrackState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -420,6 +604,7 @@ class _$ResumeTrackState implements ResumeTrackState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() error,
+    required TResult Function(TrackModel track) start,
     required TResult Function(TrackModel track) resume,
     required TResult Function(TrackModel track) pause,
   }) {
@@ -431,6 +616,7 @@ class _$ResumeTrackState implements ResumeTrackState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? error,
+    TResult Function(TrackModel track)? start,
     TResult Function(TrackModel track)? resume,
     TResult Function(TrackModel track)? pause,
   }) {
@@ -442,6 +628,7 @@ class _$ResumeTrackState implements ResumeTrackState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? error,
+    TResult Function(TrackModel track)? start,
     TResult Function(TrackModel track)? resume,
     TResult Function(TrackModel track)? pause,
     required TResult orElse(),
@@ -457,6 +644,7 @@ class _$ResumeTrackState implements ResumeTrackState {
   TResult map<TResult extends Object?>({
     required TResult Function(InitTrackState value) init,
     required TResult Function(ErrorTrackState value) error,
+    required TResult Function(StartTrackState value) start,
     required TResult Function(ResumeTrackState value) resume,
     required TResult Function(PauseTrackState value) pause,
   }) {
@@ -468,6 +656,7 @@ class _$ResumeTrackState implements ResumeTrackState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(InitTrackState value)? init,
     TResult Function(ErrorTrackState value)? error,
+    TResult Function(StartTrackState value)? start,
     TResult Function(ResumeTrackState value)? resume,
     TResult Function(PauseTrackState value)? pause,
   }) {
@@ -479,6 +668,7 @@ class _$ResumeTrackState implements ResumeTrackState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitTrackState value)? init,
     TResult Function(ErrorTrackState value)? error,
+    TResult Function(StartTrackState value)? start,
     TResult Function(ResumeTrackState value)? resume,
     TResult Function(PauseTrackState value)? pause,
     required TResult orElse(),
@@ -574,6 +764,7 @@ class _$PauseTrackState implements PauseTrackState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() error,
+    required TResult Function(TrackModel track) start,
     required TResult Function(TrackModel track) resume,
     required TResult Function(TrackModel track) pause,
   }) {
@@ -585,6 +776,7 @@ class _$PauseTrackState implements PauseTrackState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? error,
+    TResult Function(TrackModel track)? start,
     TResult Function(TrackModel track)? resume,
     TResult Function(TrackModel track)? pause,
   }) {
@@ -596,6 +788,7 @@ class _$PauseTrackState implements PauseTrackState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? error,
+    TResult Function(TrackModel track)? start,
     TResult Function(TrackModel track)? resume,
     TResult Function(TrackModel track)? pause,
     required TResult orElse(),
@@ -611,6 +804,7 @@ class _$PauseTrackState implements PauseTrackState {
   TResult map<TResult extends Object?>({
     required TResult Function(InitTrackState value) init,
     required TResult Function(ErrorTrackState value) error,
+    required TResult Function(StartTrackState value) start,
     required TResult Function(ResumeTrackState value) resume,
     required TResult Function(PauseTrackState value) pause,
   }) {
@@ -622,6 +816,7 @@ class _$PauseTrackState implements PauseTrackState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(InitTrackState value)? init,
     TResult Function(ErrorTrackState value)? error,
+    TResult Function(StartTrackState value)? start,
     TResult Function(ResumeTrackState value)? resume,
     TResult Function(PauseTrackState value)? pause,
   }) {
@@ -633,6 +828,7 @@ class _$PauseTrackState implements PauseTrackState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitTrackState value)? init,
     TResult Function(ErrorTrackState value)? error,
+    TResult Function(StartTrackState value)? start,
     TResult Function(ResumeTrackState value)? resume,
     TResult Function(PauseTrackState value)? pause,
     required TResult orElse(),

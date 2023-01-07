@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
+import 'package:provider/provider.dart';
 import 'package:spotify/common/models/playlist_model/playlist_model.dart';
 import 'package:spotify/common/models/track_model/track_model.dart';
-import 'package:spotify/common/ui/playing_track.dart';
+import 'package:spotify/common/ui/player_track/player_track.dart';
 import 'package:spotify/common/ui/playlist_image.dart';
 import 'package:spotify/common/utils/number_util.dart';
 import 'package:spotify/features/playlist_screen/repositories/playlist_repository.dart';
@@ -100,8 +101,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> with AutomaticKeepAlive
                                     ),
                                 ],
                               ),
-                              StateNotifierBuilder<PlaylistState>(
-                                stateNotifier: _playlistService,
+                              Consumer<PlaylistState>(
                                 builder: (_, PlaylistState state, __) {
                                   if (state is LoadedPlaylistState) {
                                     final playlist = state.playlist;
@@ -139,8 +139,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> with AutomaticKeepAlive
                 ),
               ),
             ),
-            StateNotifierBuilder<PlaylistState>(
-              stateNotifier: _playlistService,
+            Consumer<PlaylistState>(
               builder: (_, PlaylistState state, __) {
                 if (state is LoadingPlaylistState) {
                   return const LoadingPlaylist();
@@ -153,7 +152,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> with AutomaticKeepAlive
             ),
           ],
         ),
-        bottomSheet: const PlayingTrack(),
+        bottomSheet: const PlayerTrack(),
       ),
     );
   }
