@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LoadingListPlaylists extends StatelessWidget {
-  const LoadingListPlaylists({Key? key}) : super(key: key);
+class AppLoading extends StatelessWidget {
+  const AppLoading({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Center(

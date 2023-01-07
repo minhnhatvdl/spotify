@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotify/features/home_screen/models/playlist_model/playlist_model.dart';
+import 'package:spotify/common/models/playlist_model/playlist_model.dart';
 import 'widgets/list_playlists_grid.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'widgets/playlist_item.dart';

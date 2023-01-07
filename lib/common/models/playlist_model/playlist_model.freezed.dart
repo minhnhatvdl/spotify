@@ -25,11 +25,19 @@ class _$PlaylistModelTearOff {
   _PlaylistModel call(
       {required String id,
       required String name,
-      required List<PlaylistImageModel> images}) {
+      required List<PlaylistImageModel> images,
+      String description = "",
+      PlaylistOwnerModel? owner,
+      PlaylistFollowersModel? followers,
+      PlaylistTracksModel? tracks}) {
     return _PlaylistModel(
       id: id,
       name: name,
       images: images,
+      description: description,
+      owner: owner,
+      followers: followers,
+      tracks: tracks,
     );
   }
 
@@ -46,6 +54,10 @@ mixin _$PlaylistModel {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   List<PlaylistImageModel> get images => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  PlaylistOwnerModel? get owner => throw _privateConstructorUsedError;
+  PlaylistFollowersModel? get followers => throw _privateConstructorUsedError;
+  PlaylistTracksModel? get tracks => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -58,7 +70,18 @@ abstract class $PlaylistModelCopyWith<$Res> {
   factory $PlaylistModelCopyWith(
           PlaylistModel value, $Res Function(PlaylistModel) then) =
       _$PlaylistModelCopyWithImpl<$Res>;
-  $Res call({String id, String name, List<PlaylistImageModel> images});
+  $Res call(
+      {String id,
+      String name,
+      List<PlaylistImageModel> images,
+      String description,
+      PlaylistOwnerModel? owner,
+      PlaylistFollowersModel? followers,
+      PlaylistTracksModel? tracks});
+
+  $PlaylistOwnerModelCopyWith<$Res>? get owner;
+  $PlaylistFollowersModelCopyWith<$Res>? get followers;
+  $PlaylistTracksModelCopyWith<$Res>? get tracks;
 }
 
 /// @nodoc
@@ -75,6 +98,10 @@ class _$PlaylistModelCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? images = freezed,
+    Object? description = freezed,
+    Object? owner = freezed,
+    Object? followers = freezed,
+    Object? tracks = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -89,7 +116,56 @@ class _$PlaylistModelCopyWithImpl<$Res>
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
               as List<PlaylistImageModel>,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      owner: owner == freezed
+          ? _value.owner
+          : owner // ignore: cast_nullable_to_non_nullable
+              as PlaylistOwnerModel?,
+      followers: followers == freezed
+          ? _value.followers
+          : followers // ignore: cast_nullable_to_non_nullable
+              as PlaylistFollowersModel?,
+      tracks: tracks == freezed
+          ? _value.tracks
+          : tracks // ignore: cast_nullable_to_non_nullable
+              as PlaylistTracksModel?,
     ));
+  }
+
+  @override
+  $PlaylistOwnerModelCopyWith<$Res>? get owner {
+    if (_value.owner == null) {
+      return null;
+    }
+
+    return $PlaylistOwnerModelCopyWith<$Res>(_value.owner!, (value) {
+      return _then(_value.copyWith(owner: value));
+    });
+  }
+
+  @override
+  $PlaylistFollowersModelCopyWith<$Res>? get followers {
+    if (_value.followers == null) {
+      return null;
+    }
+
+    return $PlaylistFollowersModelCopyWith<$Res>(_value.followers!, (value) {
+      return _then(_value.copyWith(followers: value));
+    });
+  }
+
+  @override
+  $PlaylistTracksModelCopyWith<$Res>? get tracks {
+    if (_value.tracks == null) {
+      return null;
+    }
+
+    return $PlaylistTracksModelCopyWith<$Res>(_value.tracks!, (value) {
+      return _then(_value.copyWith(tracks: value));
+    });
   }
 }
 
@@ -100,7 +176,21 @@ abstract class _$PlaylistModelCopyWith<$Res>
           _PlaylistModel value, $Res Function(_PlaylistModel) then) =
       __$PlaylistModelCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String name, List<PlaylistImageModel> images});
+  $Res call(
+      {String id,
+      String name,
+      List<PlaylistImageModel> images,
+      String description,
+      PlaylistOwnerModel? owner,
+      PlaylistFollowersModel? followers,
+      PlaylistTracksModel? tracks});
+
+  @override
+  $PlaylistOwnerModelCopyWith<$Res>? get owner;
+  @override
+  $PlaylistFollowersModelCopyWith<$Res>? get followers;
+  @override
+  $PlaylistTracksModelCopyWith<$Res>? get tracks;
 }
 
 /// @nodoc
@@ -119,6 +209,10 @@ class __$PlaylistModelCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? images = freezed,
+    Object? description = freezed,
+    Object? owner = freezed,
+    Object? followers = freezed,
+    Object? tracks = freezed,
   }) {
     return _then(_PlaylistModel(
       id: id == freezed
@@ -133,16 +227,38 @@ class __$PlaylistModelCopyWithImpl<$Res>
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
               as List<PlaylistImageModel>,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      owner: owner == freezed
+          ? _value.owner
+          : owner // ignore: cast_nullable_to_non_nullable
+              as PlaylistOwnerModel?,
+      followers: followers == freezed
+          ? _value.followers
+          : followers // ignore: cast_nullable_to_non_nullable
+              as PlaylistFollowersModel?,
+      tracks: tracks == freezed
+          ? _value.tracks
+          : tracks // ignore: cast_nullable_to_non_nullable
+              as PlaylistTracksModel?,
     ));
   }
 }
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.none, explicitToJson: true)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class _$_PlaylistModel implements _PlaylistModel {
   const _$_PlaylistModel(
-      {required this.id, required this.name, required this.images});
+      {required this.id,
+      required this.name,
+      required this.images,
+      this.description = "",
+      this.owner,
+      this.followers,
+      this.tracks});
 
   factory _$_PlaylistModel.fromJson(Map<String, dynamic> json) =>
       _$$_PlaylistModelFromJson(json);
@@ -153,10 +269,19 @@ class _$_PlaylistModel implements _PlaylistModel {
   final String name;
   @override
   final List<PlaylistImageModel> images;
+  @JsonKey()
+  @override
+  final String description;
+  @override
+  final PlaylistOwnerModel? owner;
+  @override
+  final PlaylistFollowersModel? followers;
+  @override
+  final PlaylistTracksModel? tracks;
 
   @override
   String toString() {
-    return 'PlaylistModel(id: $id, name: $name, images: $images)';
+    return 'PlaylistModel(id: $id, name: $name, images: $images, description: $description, owner: $owner, followers: $followers, tracks: $tracks)';
   }
 
   @override
@@ -166,7 +291,12 @@ class _$_PlaylistModel implements _PlaylistModel {
             other is _PlaylistModel &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.images, images));
+            const DeepCollectionEquality().equals(other.images, images) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description) &&
+            const DeepCollectionEquality().equals(other.owner, owner) &&
+            const DeepCollectionEquality().equals(other.followers, followers) &&
+            const DeepCollectionEquality().equals(other.tracks, tracks));
   }
 
   @override
@@ -174,7 +304,11 @@ class _$_PlaylistModel implements _PlaylistModel {
       runtimeType,
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(images));
+      const DeepCollectionEquality().hash(images),
+      const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(owner),
+      const DeepCollectionEquality().hash(followers),
+      const DeepCollectionEquality().hash(tracks));
 
   @JsonKey(ignore: true)
   @override
@@ -191,7 +325,11 @@ abstract class _PlaylistModel implements PlaylistModel {
   const factory _PlaylistModel(
       {required String id,
       required String name,
-      required List<PlaylistImageModel> images}) = _$_PlaylistModel;
+      required List<PlaylistImageModel> images,
+      String description,
+      PlaylistOwnerModel? owner,
+      PlaylistFollowersModel? followers,
+      PlaylistTracksModel? tracks}) = _$_PlaylistModel;
 
   factory _PlaylistModel.fromJson(Map<String, dynamic> json) =
       _$_PlaylistModel.fromJson;
@@ -202,6 +340,14 @@ abstract class _PlaylistModel implements PlaylistModel {
   String get name;
   @override
   List<PlaylistImageModel> get images;
+  @override
+  String get description;
+  @override
+  PlaylistOwnerModel? get owner;
+  @override
+  PlaylistFollowersModel? get followers;
+  @override
+  PlaylistTracksModel? get tracks;
   @override
   @JsonKey(ignore: true)
   _$PlaylistModelCopyWith<_PlaylistModel> get copyWith =>

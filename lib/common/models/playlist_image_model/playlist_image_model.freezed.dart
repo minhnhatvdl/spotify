@@ -137,7 +137,7 @@ class __$PlaylistImageModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.none, explicitToJson: true)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class _$_PlaylistImageModel implements _PlaylistImageModel {
   const _$_PlaylistImageModel({required this.url, this.width, this.height});
 

@@ -4,7 +4,7 @@ part 'playlist_image_model.g.dart';
 
 @freezed
 class PlaylistImageModel with _$PlaylistImageModel {
-  @JsonSerializable(fieldRename: FieldRename.none, explicitToJson: true)
+  @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
   const factory PlaylistImageModel({
     required String url,
     double? width,

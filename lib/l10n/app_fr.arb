@@ -2,5 +2,7 @@
     "appName": "Spotify",
     "featuredPlaylistsTitle": "Choix de l'éditeur",
     "serverError": "Malheureusement, une erreur du serveur nous a empêché de finaliser votre demande. Merci de réessayer.",
-    "refreshButton": "Rafraîchir"
+    "refreshButton": "Rafraîchir",
+    "playlistBy": "Liste de lecture par",
+    "followers": "abonnés"
 }

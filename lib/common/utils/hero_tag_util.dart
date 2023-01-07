@@ -1,3 +1,3 @@
 class HeroTagUtil {
-  static String playlist(String playlistId) => playlistId;
+  static String playlistImage(String url) => url;
 }

@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart';
+import 'package:spotify/common/models/playlist_model/playlist_model.dart';
 import 'package:spotify/common/models/repository_reponse.dart';
 import 'package:spotify/core/app_api.dart';
-import 'package:spotify/features/home_screen/models/playlist_model/playlist_model.dart';
 
 class PlaylistsRepository {
   Future<RepositoryResponse<SimpleStatus, List<PlaylistModel>>> getFeaturedPlaylists() async {

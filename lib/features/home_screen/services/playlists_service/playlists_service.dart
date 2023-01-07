@@ -1,8 +1,8 @@
+import 'package:spotify/common/models/playlist_model/playlist_model.dart';
 import 'package:spotify/common/models/repository_reponse.dart';
-import 'package:spotify/features/home_screen/models/playlist_model/playlist_model.dart';
 import 'package:spotify/features/home_screen/repositories/playlists_repository.dart';
-import 'package:spotify/features/home_screen/services/playlists_service/playlists_state/playlists_state.dart';
 import 'package:state_notifier/state_notifier.dart';
+import 'playlists_state/playlists_state.dart';
 
 class PlaylistsService extends StateNotifier<PlaylistsState> {
   PlaylistsService({required this.playlistsRepository}) : super(const InitPlaylistsState());
