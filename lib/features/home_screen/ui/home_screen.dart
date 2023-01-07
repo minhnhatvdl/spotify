@@ -8,6 +8,7 @@ import 'package:spotify/features/home_screen/services/playlists_service/playlist
 import 'package:spotify/features/home_screen/services/playlists_service/playlists_state/playlists_state.dart';
 import 'package:spotify/features/home_screen/ui/widgets/error_list_playlists.dart';
 import 'package:spotify/features/home_screen/ui/widgets/loaded_list_playlists.dart';
+import 'package:spotify/common/ui/playing_track.dart';
 import 'package:spotify/locator.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -48,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> with AutomaticKeepAliveClientMi
             return const ErrorListPlaylists();
           },
         ),
+        bottomSheet: const PlayingTrack(),
       ),
     );
   }

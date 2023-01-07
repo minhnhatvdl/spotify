@@ -3,6 +3,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:spotify/common/models/playlist_model/playlist_model.dart';
 import 'package:spotify/common/models/track_model/track_model.dart';
+import 'package:spotify/common/ui/playing_track.dart';
 import 'package:spotify/common/ui/playlist_image.dart';
 import 'package:spotify/common/utils/number_util.dart';
 import 'package:spotify/features/playlist_screen/repositories/playlist_repository.dart';
@@ -13,7 +14,6 @@ import 'package:spotify/locator.dart';
 import 'widgets/error_playlist.dart';
 import 'widgets/loaded_playlist.dart';
 import 'widgets/loading_playlist.dart';
-import 'widgets/playing_track.dart';
 
 class PlaylistScreen extends StatefulWidget {
   const PlaylistScreen(this.playlist, {Key? key}) : super(key: key);
