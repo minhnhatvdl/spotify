@@ -4,6 +4,7 @@ A spotify application developed by flutter with features:
       + A list of playlists
     - Playlist screen
       + A detail of playlist
+All
 
 # create a splash logo
 flutter pub run flutter_native_splash:create
